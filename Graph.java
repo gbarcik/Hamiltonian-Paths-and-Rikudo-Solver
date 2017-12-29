@@ -19,9 +19,11 @@ public class Graph {
 	
 	void addEdge(Vertex source, Vertex target) {
 		edges.add(new Edge(source, target));
+		vertices.get(source.get_vertex()).get_neighbours().add(target);
 	}
 	
 	void addEdge(int source, int target) {
 		edges.add(new Edge(source, target));
+		vertices.get(source).get_neighbours().add(vertices.get(target));
 	}
 }
